@@ -1,0 +1,5 @@
+Consolidate compiler generated dependencies of target local_dds_fixture
+Consolidate compiler generated dependencies of target g1_throw
+[ 33%] Built target throw_self_test
+[ 66%] Built target local_dds_fixture
+[100%] Built target g1_throw

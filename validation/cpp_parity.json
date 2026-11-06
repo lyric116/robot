@@ -1,0 +1,1 @@
+{"passed":true,"observation_max_error":4.76837e-06,"action_max_error":4.76837e-06,"target_max_error_rad":1.19209e-06,"torque_max_error_nm":4.57764e-05,"release_events":1,"release_step":21,"release_time_s":0.42,"bounded_target_and_slew":true,"nan_rejected":true,"robot_commands_sent":false}

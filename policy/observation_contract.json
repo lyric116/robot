@@ -1,0 +1,65 @@
+{
+  "checkpoint": "logs/rsl_rl/g1_apple_throw_hardware_v10/2026-11-05_20-40-10_constrained_physics/model_9999.pt",
+  "hardware_contract_sha256": "5a23db19b85de2185ca1ba491edea81442192220bcc3b43e8b75604215cbe9fe",
+  "actor_features": 126,
+  "actor_outputs": 30,
+  "critic_features": 135,
+  "actor_inputs": [
+    {
+      "name": "base_ang_vel",
+      "start_inclusive": 0,
+      "end_exclusive": 3,
+      "real_source": "pelvis IMU gyroscope; verify frame and units"
+    },
+    {
+      "name": "projected_gravity",
+      "start_inclusive": 3,
+      "end_exclusive": 6,
+      "real_source": "pelvis attitude estimate -> body-frame gravity; simulator uses true root quaternion"
+    },
+    {
+      "name": "joint_pos",
+      "start_inclusive": 6,
+      "end_exclusive": 35,
+      "real_source": "29 encoder positions minus training default pose"
+    },
+    {
+      "name": "joint_vel",
+      "start_inclusive": 35,
+      "end_exclusive": 64,
+      "real_source": "29 encoder velocities minus default joint velocity"
+    },
+    {
+      "name": "actions",
+      "start_inclusive": 64,
+      "end_exclusive": 94,
+      "real_source": "previous 29 joint actions plus release action; controller memory"
+    },
+    {
+      "name": "throw_context",
+      "start_inclusive": 94,
+      "end_exclusive": 97,
+      "real_source": "commanded-release latch, elapsed_time/8, sin(2*pi*elapsed_time/8); no ball landing input"
+    },
+    {
+      "name": "applied_joint_target",
+      "start_inclusive": 97,
+      "end_exclusive": 126,
+      "real_source": "previous limited target, normalized by default pose and per-joint action scale; controller memory"
+    }
+  ],
+  "actor_requires_ball_state": false,
+  "actor_requires_external_localization": false,
+  "actor_requires_motion_reference": false,
+  "critic_privileged_inputs": "apple relative position3 + linear/angular velocity6, training only",
+  "policy_hz": 50,
+  "servo_hz_simulation": 500,
+  "deploy_ready": false,
+  "remaining": [
+    "hardware commissioning and timing on target robot",
+    "external Inspire hand release integration and latency calibration",
+    "coupled ankle/waist and continuous/thermal characteristics",
+    "self-collision unavailable to online encoder/IMU-only runtime"
+  ],
+  "robot_commands_sent": false
+}

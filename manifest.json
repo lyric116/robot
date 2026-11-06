@@ -1,0 +1,56 @@
+{
+  "package": "g1_apple_throw_v10_model9999",
+  "created_utc": "2026-11-06T05:49:33.231080+00:00",
+  "training_checkpoint": "g1_apple_throw_hardware_v10/2026-11-05_20-40-10_constrained_physics/model_9999.pt",
+  "checkpoint_sha256": "f67e69751d875c230590b49b145fdfa83d732ff8fcbc3db5ddccb30c738d84f1",
+  "onnx_sha256": "c60e0aade7cb65dc34219b18cc199ca94e8576c84e20993ed62e7014ea9ddb7d",
+  "hardware_contract_sha256": "5a23db19b85de2185ca1ba491edea81442192220bcc3b43e8b75604215cbe9fe",
+  "actor_inputs": 126,
+  "actor_outputs": 30,
+  "policy_hz": 50,
+  "servo_hz": 500,
+  "hardware": "Unitree G1 29-DOF",
+  "hand": "Inspire, separately deployed by user; no finger commands in this package",
+  "release_event": "one Unix datagram per trial, right hand, /tmp/g1_throw_release.sock",
+  "compiled_and_tested_architectures": [
+    "x86_64"
+  ],
+  "supplied_dependency_architectures": [
+    "x86_64",
+    "aarch64"
+  ],
+  "aarch64_requires_native_build": true,
+  "validations": {
+    "onnx_export": true,
+    "cpp_golden_rollout": true,
+    "loopback_dds_domain77": true,
+    "physical_robot": false
+  },
+  "hardware_qualified": false,
+  "simulation_strict_gate_passed": false,
+  "limitations": [
+    "Low release height persists",
+    "No online self-collision sensor",
+    "Real Inspire hand mass/grasp/release latency not calibrated",
+    "Hold freezes final limited target; it is not a continuing locomotion policy",
+    "Target ARM64 timing and physical robot commissioning remain untested"
+  ],
+  "real_robot_connected": false,
+  "real_robot_commands_sent": false,
+  "critical_files_sha256": {
+    "CMakeLists.txt": "31bbe43d4ae030223adc3f9f4e9093a98f83ff059fc35d4cf60070e75659b738",
+    "build.sh": "2e4f27c70e029f04c1a45a42683e25a072a1c954fc6337957cc87b96bd10c079",
+    "include/throw_policy.hpp": "16a57fc9a1b8ae3ecd5881f9f62ba38c8a5dc405c18ab9acc77e2d57042207fb",
+    "policy/deploy.yaml": "95cc499b9bed26d3d3e1826b8d8fe7a99d3e98b109cd0813ec3a0ada52eb3a09",
+    "policy/hardware_limits.json": "5a23db19b85de2185ca1ba491edea81442192220bcc3b43e8b75604215cbe9fe",
+    "policy/observation_contract.json": "7d6331c18d4cdad6c26a5d33eca9b8bdd2320c96d115f56f3e2a6582706ee1c0",
+    "policy/policy.onnx": "c60e0aade7cb65dc34219b18cc199ca94e8576c84e20993ed62e7014ea9ddb7d",
+    "scripts/test_local_dds.py": "2248d86af3f97a2c7a8dd66f06008b62f86202c147cf630aea15db56efa8764d",
+    "scripts/verify_package.py": "2fed52bfd34f79b8caafee9dfe185317958a4b105aa1e95fd4f192e7cfd00c92",
+    "scripts/watch_release.py": "51f4cbb0085020ee9fea40235a542a2616ba33b3971978b13ed61fa641bdfc03",
+    "src/controller.cpp": "8c8f22c4671ab2485080c873445b67d99ba5961adf8134defb65d0d411fe1208",
+    "src/local_dds_fixture.cpp": "07780a7c4674d21b7749c97b9fed8e22c6d17f28668236c8ed73fa0f27fcb998",
+    "src/self_test.cpp": "cd2a0f750c23a0ec0843a5710786ba3c3340dd27668c84dec7eda2078a23ec46",
+    "start_controller.sh": "a675cf1c992168889d32f34beef917e2e07a2ac3a0d61226cee63f9e82f5ac36"
+  }
+}

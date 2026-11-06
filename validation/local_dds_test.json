@@ -1,0 +1,54 @@
+{
+  "passed": true,
+  "control": {
+    "passed": true,
+    "interface": "lo",
+    "dds_domain": 77,
+    "control_mode": true,
+    "stages": [
+      "FixStand",
+      "Hold",
+      "Passive",
+      "Throw"
+    ],
+    "events": [
+      {
+        "event": "release",
+        "hand": "right",
+        "pid": 441078,
+        "trial_id": 1,
+        "policy_step": 21,
+        "policy_time_s": 0.419999991,
+        "monotonic_ns": 511542403155606,
+        "action": 3.47097325,
+        "release_commanded": true
+      }
+    ],
+    "transport": {
+      "interface": "lo",
+      "lowcmd_received": 5493,
+      "double_pd_count": 0,
+      "nonfinite": false
+    },
+    "faults": [],
+    "real_robot_connected": false
+  },
+  "monitor": {
+    "passed": true,
+    "interface": "lo",
+    "dds_domain": 77,
+    "control_mode": false,
+    "stages": [
+      "Passive"
+    ],
+    "events": [],
+    "transport": {
+      "interface": "lo",
+      "lowcmd_received": 0,
+      "double_pd_count": 0,
+      "nonfinite": false
+    },
+    "faults": [],
+    "real_robot_connected": false
+  }
+}

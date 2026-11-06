@@ -1,0 +1,12 @@
+{
+  "passed": true,
+  "checkpoint_sha256": "f67e69751d875c230590b49b145fdfa83d732ff8fcbc3db5ddccb30c738d84f1",
+  "onnx_sha256": "c60e0aade7cb65dc34219b18cc199ca94e8576c84e20993ed62e7014ea9ddb7d",
+  "hardware_contract_sha256": "5a23db19b85de2185ca1ba491edea81442192220bcc3b43e8b75604215cbe9fe",
+  "actor_dim": 126,
+  "action_dim": 30,
+  "golden_policy_steps": 205,
+  "pytorch_onnx_max_action_error": 4.76837158203125e-06,
+  "original_training_normalization_embedded": true,
+  "robot_commands_sent": false
+}
