@@ -1,0 +1,65 @@
+# ============================================================
+# g1_apple_throw_v10_model9999
+# 部署包仓库忽略规则
+# 原则：源码 / 策略 / 验证基准数据必须入库；
+#       构建产物、预编译二进制、运行期状态一律不入库。
+# ============================================================
+
+# ---------- CMake / 构建输出 ----------
+# build.sh 使用 cmake -B build-$(uname -m)
+build/
+build-*/
+cmake-build-*/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CTestTestfile.cmake
+compile_commands.json
+.ninja_deps
+.ninja_log
+*.o
+
+# ---------- 可执行文件输出目录 ----------
+# CMakeLists.txt 的 RUNTIME_OUTPUT_DIRECTORY 指向 bin/${ARCH}
+# 由 bash build.sh 重新生成，不入库
+bin/
+
+# ---------- 预编译第三方依赖 ----------
+# ONNX Runtime 1.22.0 (93M) + Unitree SDK2 (101M)
+# 属于上游固定版本二进制，不作为仓库内容提交
+thirdparty/
+
+# ---------- 控制器运行期产物 ----------
+# src/controller.cpp 在包根目录写出这些文件
+status.json
+status.json.tmp
+release_events.jsonl
+*.sock
+
+# ---------- 日志 ----------
+*.log
+# validation/ 下的验证日志属于交付证据，保留
+!validation/*.log
+
+# ---------- Python ----------
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+.pytest_cache/
+
+# ---------- 编辑器 / IDE ----------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.clangd/
+.cache/
+
+# ---------- 操作系统杂项 ----------
+.DS_Store
+Thumbs.db
+desktop.ini
